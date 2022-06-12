@@ -40,7 +40,8 @@ class Mailbox extends EventEmitter {
       password: credentials.password,
       port: defaultTo(credentials.port, 993),
       tls: defaultTo(credentials.tls, true),
-      tlsOptions: defaultTo(credentials.tlsOptions, null)
+      tlsOptions: defaultTo(credentials.tlsOptions, null),
+      debug: (str) => console.log("[imap] ", str),
     }
 
     if (this._credentials.tlsOptions !== null) {

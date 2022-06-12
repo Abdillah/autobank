@@ -81,6 +81,7 @@ class Authentication extends EventEmitter {
       uri = `mongodb://${host}:${port}/${database}`
     }
 
+    console.log("mongo ", uri)
     this._db = this._dependencies.mongoose.createConnection(uri)
 
     Token = Token(this._dependencies.mongoose, this._db)
